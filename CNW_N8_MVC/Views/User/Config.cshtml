@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = " User Detail";
+    Layout = "~/Views/Shared/List.cshtml";
+}
+@{ var acc = ViewData["acc"] as CNW_N8_MVC.Models.user;}
+
+<section class="main-content" style="background-color : #e9ecef">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <div class="user-info-box bg-white">
+                    <div class="user-profile-img">
+                        <img src="/Content/img/profile-user.png" alt="">
+                    </div>
+                    <h5 class="user-name">@acc.username</h5>
+                    <table class="table table-bordered user-promote-table">
+                    </table>
+                    <form method="get" action="/User/Logout/">
+                        <div class="user-menu-box">
+                            <ul class="text-left">
+                                <li class="align-items-center d-flex">
+                                    <img src="/Content/font/notepad.svg" alt="">
+                                    <a href="@Url.Action("Booking", "User")" class="ml-2">Đơn Hàng</a>
+                                </li>
+                                <li class="align-items-center d-flex selected">
+                                    <img src="/Content/font/cogwheel.svg" alt="">
+                                    <a href="@Url.Action("Config", "User")" class="ml-2">Cài Đặt</a>
+                                </li>
+                                <li class="align-items-center d-flex">
+                                    <img src="/Content/font/dashbroad.svg" alt="">
+                                    <a href="@Url.Action("Logout","User")" class="ml-2">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="user-main-box bg-white">
+                    <div class="p-2 account-information">
+                        <p class="semi-bold fs16 filter-accordion">
+                            Thông Tin Người Dùng
+                        </p>
+                        <div class="collapse show" id="user-info">
+                            <div class="mt-4">
+                                <form method="post" action="/User/UserChanges/">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-4">
+                                            <label class="fs12">Họ Và Tên</label>
+                                            <input name="full_name" type="text" class="form-control" placeholder="Họ và tên" value="@acc.full_name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-4">
+                                            <label class="fs12">Số Điện Thoại</label>
+                                            <input name="phone" type="text" class="form-control" placeholder="Sđt" value="@acc.phone">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label class="fs12">Email</label>
+                                            <input name="email" type="text" class="form-control" placeholder="Email" value="@acc.email">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-4">
+                                            <label class="fs12">Địa Chỉ</label>
+                                            <input name="address" type="text" class="form-control" placeholder="Địa chỉ" value="@acc.address">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-main text-main">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-main-box mt-5 bg-white">
+                    <div class="p-2 account-information">
+                        <p class="semi-bold fs16 filter-accordion">
+                            Đổi mật khẩu
+                        </p>
+                        <div class="collapse show" id="user-password">
+                            <div class="mt-4">
+                                <form method="post" action="/User/PasswordChanges/">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label class="fs12">Mật Khẩu Hiện Tại</label>
+                                            <input name="password" type="text" class="form-control" placeholder="Mật khẩu hiện tại" id="nowPassword">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label class="fs12">Mật khẩu mới</label>
+                                            <input name="newPassword1" type="text" class="form-control" placeholder="Mật khẩu mới" id="newPassword">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <input name="newPassword2" type="text" class="form-control" placeholder="Nhập lại mật khẩu" id="NewPassword2">
+                                            <div style="color:lawngreen; font-size:20px" id="divThongBao1"></div>
+                                        </div>
+                                    </div>
+                                    <div style="color:red; font-size:20px" id="divThongBao2"></div>
+                                    <button id="saveChangePassword" type="submit" class="btn btn-main text-main">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/js/Config.js"></script>

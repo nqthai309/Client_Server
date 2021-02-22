@@ -1,0 +1,44 @@
+﻿
+@using CNW_N8_MVC.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header"><i class="fa fa-align-justify"></i> Danh sách Homestay</div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th>Tên homestay</th>
+                                    <th>Địa điểm</th>
+                                    <th>Giá</th>
+                                    <th>Giá khuyến mãi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (homestay it in Model.homestays)
+                                {
+                                    <tr>
+                                        <td>@it.homestay_name</td>
+                                        <td>@it.location_id</td>
+                                        <td>@it.price</td>
+                                        <td>@it.sell_price</td>
+                                        <td><a href="@Url.Action("Edit","BackendHomestay", new { @id = it.id})">Sửa</a></td>
+                                        <td><a style="color:red" href="@Url.Action("DeleteHomestay","BackendHomestay",new { @id = it.id})">Xoá</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>

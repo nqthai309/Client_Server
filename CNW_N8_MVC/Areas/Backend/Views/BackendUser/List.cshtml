@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+
+@using CNW_N8_MVC.Models;
+@model List<CNW_N8_MVC.Models.user>
+<form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header"><i class="fa fa-align-justify"></i> Danh sách người dùng</div>
+                <div class="card-body">
+                    <table class="table table-responsive-sm">
+
+                        <thead>
+
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>chức vụ</th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (user it in Model)
+                            {
+                                <tr>
+
+                                    <td>@it.username</td>
+                                    <td>@it.email</td>
+                                    <td>@it.phone</td>
+                                    @switch (@it.role_id)
+                                    {
+                                        case 0:
+                                            <td>Admin</td>
+                                            break;
+                                        case 1:
+                                            <td>Khách hàng</td>
+                                            break;
+                                    }
+                                    <td><a href="@Url.Action("Edit","BackendUser", new { @id = it.id})">Sửa</a></td>
+                                    <td><a style="color:red" href="@Url.Action("DeleteUser","BackendUser",new { @id = it.id})">Xoá</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

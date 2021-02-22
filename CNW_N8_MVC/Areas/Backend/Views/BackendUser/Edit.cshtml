@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+
+
+@model CNW_N8_MVC.Models.user
+
+<div class="card">
+    <div class="card-header"><strong>Basic Form</strong> Elements</div>
+    <div class="card-body">
+        <form class="form-horizontal" action="/BackendUser/EditUser/" method="post" enctype="multipart/form-data">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Username</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="username" type="text" readonly="readonly" name="username" placeholder="Username" value="@Model.username">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Họ và tên</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="full_name" type="text" name="full_name" placeholder="Họ và tên" value="@Model.full_name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Email</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="email" type="email" name="email" placeholder="Nhập Email" autocomplete="email" value="@Model.email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Số điện thoại</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="phone" name="phone" id="phone" placeholder="Nhập số điện thoại" autocomplete="email" value="@Model.phone">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="address">Địa chỉ</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="address" name="address" id="address" placeholder="Enter Email" autocomplete="email" value="@Model.address">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="password">Password</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="password" type="password" name="password" placeholder="Password" autocomplete="new-password" value="@Model.password"><span class="help-block">Please enter a complex password</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Chức vụ</label>
+                <div class="col-md-9">
+                    <select class="form-control" id="role_id" name="role_id">
+
+
+
+                        @if (Model.role_id == 0)
+                        {
+                            <option selected="selected" value="0">Admin</option>
+                            <option value="1">Khách hàng</option>
+                        }
+                        else
+                        {
+                            <option selected="selected" value="1">Khách hàng</option>
+                            <option value="0">Admin</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div style="color:red; font-size:20px; text-align:center" id="divThongBao"></div>
+            <div class="card-footer">
+                <button id="btnSua" class="btn btn-sm btn-primary" type="submit"> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/js/EditUser.js"></script>

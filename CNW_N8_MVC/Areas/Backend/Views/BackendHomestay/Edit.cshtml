@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+@{ IEnumerable<CNW_N8_MVC.Models.location> listLocation = ViewData["listLocation"] as IEnumerable<CNW_N8_MVC.Models.location>;}
+@model CNW_N8_MVC.Models.homestay
+
+<div class="card">
+    <div class="card-header"><strong>Basic Form</strong> Elements</div>
+    <div class="card-body">
+        <form class="form-horizontal" action="/BackendHomestay/EditHomestay" method="post" enctype="multipart/form-data">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Tên Homestay</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="homestay_name" type="text" name="homestay_name" placeholder="Tên Homestay" value="@Model.homestay_name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Địa Điểm</label>
+                <div class="col-md-9">
+                    <select class="form-control"  name="location_id" id="location_id">
+                        @{ List<string> listNameLocation = new List<string>(); }
+                        @foreach (var it in listLocation)
+                        {
+                            listNameLocation.Add(it.location_name);
+                        }
+
+                        @for (int i = 0; i < listNameLocation.Count(); i++)
+                        {
+                            if (Model.location.location_name == listNameLocation[i])
+                            {
+                                <option   selected="selected" value="@(i+1)">@listNameLocation[i]</option>
+                            }
+                            else
+                            {
+                                <option   value="@(i+1)">@listNameLocation[i]</option>
+                            }
+                        }
+
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Giá</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="price" type="number" name="price" placeholder="Nhập Giá" value="@Model.price">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Giá Khuyến Mại</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="number" id="sell_price" name="sell_price" placeholder="Nhập Giá KM" value="@Model.sell_price">
+                </div>
+            </div>
+
+
+            <div style="color:red; font-size:20px; text-align:center" id="divThongBao"></div>
+            <div class="card-footer">
+                <button id="btnSua" class="btn btn-sm btn-primary" type="submit"> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/js/EditHomestay1.js"></script>

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/poppins/SVN-Poppins.woff2) format('woff2'), url(../font/poppins/SVN-Poppins.woff) format('woff');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../font/poppins/SVN-PoppinsSemiBold.woff2) format('woff2'), url(../font/poppins/SVN-PoppinsSemiBold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/poppins/SVN-PoppinsBold.woff2) format('woff2'), url(../font/poppins/SVN-PoppinsBold.woff) format('woff');
+}

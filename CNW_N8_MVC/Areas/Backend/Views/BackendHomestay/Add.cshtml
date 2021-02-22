@@ -1,0 +1,63 @@
+﻿
+@using CNW_N8_MVC.Models;
+@{ IEnumerable<CNW_N8_MVC.Models.location> listLocation = ViewData["listLocation"] as IEnumerable<CNW_N8_MVC.Models.location>;}
+@model dynamic
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+
+<div class="card">
+    <div class="card-header"><strong>Homestay</strong> Thêm mới Homestay</div>
+    <div class="card-body">
+        <form class="form-horizontal" action="/BackendHomestay/AddHomestay" method="post" enctype="multipart/form-data">
+
+
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Địa Điểm</label>
+                <div class="col-md-9">
+                    <select class="form-control" id="location_id" name="location_id">
+                        @{ List<string> listNameLocation = new List<string>(); }
+                        @foreach (var it in listLocation)
+                        {
+                            listNameLocation.Add(it.location_name);
+                        }
+
+                        @for (int i = 0; i < listNameLocation.Count(); i++)
+                        {
+                            <option value="@(i+1)">@listNameLocation[i]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Tên Homestay</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="homestay_name" type="text" name="homestay_name" placeholder="Tên Homestay">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Giá Khuyến Mại</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="number" id="sell_price" name="sell_price" placeholder="Nhập Giá KM">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="email-input">Giá</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="number" id="price" name="price" placeholder="Nhập Giá">
+                </div>
+            </div>
+
+
+            <div style="color:red; font-size:20px; text-align:center" id="divThongBao"></div>
+            <div class="card-footer">
+                <button id="btnThem" class="btn btn-sm btn-primary" type="submit"> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/js/AddHomestay1.js"></script>

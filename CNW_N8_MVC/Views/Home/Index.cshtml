@@ -1,0 +1,173 @@
+﻿
+@using CNW_N8_MVC.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+<section class="top-destination home-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="fs32">Những Địa Danh Nổi Tiếng</h2>
+
+        </div>
+        <div class="top-destination-list mt-5">
+            <div class="row">
+                @foreach (location it in Model.locations)
+                {
+                    <div class="col-sm-3">
+                        <div class="destination-item">
+                            <a href="@Url.Action("HotelList","Location", new { @locationName = @it.location_name, @page = 1 })">
+                                <img  src="@it.image_url" alt="">
+                                <div class="centered text-white">@it.location_name</div>
+                            </a>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="featured-ticket home-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="fs32">Khách Sạn</h2>
+            <h3 class="fs16">Khách Sạn Được Khuyên Bởi Đa Số Người Dùng</h3>
+        </div>
+        <div class="position-relative full-width pt-5">
+            <div class="row">
+                @{ int key1 = 0;}
+                @foreach (hotel it in Model.hotels)
+                {
+                    key1 += 1;
+                    if (key1 > 4)
+                    {
+                        break;
+                    }
+                    else
+                    {
+
+                        <div class="col-sm-3">
+                            <div class="soutchai-item">
+                                <div class="m_justify_list m_radius_box act_card act_card_sm a_sd_move j_activity_item js-item block-item">
+                                    <a href="/Hotel/Detail/@it.id">
+                                        <div class="soutchai-item-img">
+                                            <img src="@it.image_url" />
+                                            <div class="top-left">
+                                                <i class="fas fa-map-marker-alt fs13"></i>
+                                                <span class="t_white">@it.location.location_name</span>
+                                            </div>
+                                        </div>
+                                        <ul class="">
+                                            <li class="position-relative">
+                                                <p class="title">@it.hotel_name</p>
+                                            </li>
+                                            <li class="price pt-2">
+                                                <p class="fs12 text-grey">
+                                                    <del>@it.price VNĐ</del>
+                                                </p>
+                                                <p>
+                                                    <span class="latest_price color-main"><b>@it.sell_price đ/Đêm</b></span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="text-center">
+                <a href="@Url.Action("List", "Hotel")">
+                    <div class="more-destination d-inline-block align-items-center">
+                        <i class="fas fa-map-marker-alt fs20 d-inline-block"></i>
+                        <span class="d-inline-block">Xem tất cả Hotel</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="featured-ticket home-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="fs32">HOME STAY</h2>
+            <h3 class="fs16">Home Stay được khuyên dùng bởi đa số người dùng</h3>
+        </div>
+        <div class="position-relative full-width pt-5">
+            <div class="row">
+                @{ int key = 0;}
+                @foreach (homestay it in Model.homestays)
+                {
+                    key += 1;
+                    if (key > 4)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        <div class="col-sm-3">
+                            <div class="soutchai-item">
+                                <div class="m_justify_list m_radius_box act_card act_card_sm a_sd_move j_activity_item js-item block-item">
+                                    <a href="/Homestay/Detail/@it.id">
+                                        <div class="soutchai-item-img">
+                                            <img src="@it.image_url" />
+                                            <div class="top-left">
+                                                <i class="fas fa-map-marker-alt fs13"></i>
+                                                <span class="t_white">@it.location.location_name</span>
+                                            </div>
+                                        </div>
+                                        <ul class="">
+                                            <li class="position-relative">
+                                                <p class="title">@it.homestay_name</p>
+                                            </li>
+                                            <li class="price pt-2">
+                                                <p class="fs12 text-grey">
+                                                    <del>@it.price VNĐ</del>
+                                                </p>
+                                                <p>
+                                                    <span class="latest_price color-main"><b> @it.sell_price đ/Đêm</b></span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
+            <div class="text-center">
+                <a href="@Url.Action("List", "Homestay")">
+                    <div class="more-destination d-inline-block align-items-center">
+                        <i class="fas fa-map-marker-alt fs20 d-inline-block"></i>
+                        <span class="d-inline-block">Xem tất cả Homestay</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="partner mt-5">
+    <div class="container">
+        <div class="partner-brand">
+            <h2 class="fs32 text-center">ĐỐI TÁC</h2>
+            <h3 class="fs16 text-grey-light2 text-center">Đối Tác Chiến Lược Của TTHT Travel</h3>
+            
+        </div>
+
+    </div>
+</section>
+
+<script src="Content/vendor/jquery/jquery-3.4.1.min.js"></script>
+<script src="Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="Content/vendor/fontawesome/js/all.min.js"></script>
+<script src="Content/vendor/swiper/dist/js/swiper.min.js"></script>
+<script src="Content/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="Content/js/common.js"></script>

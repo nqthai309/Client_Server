@@ -1,0 +1,279 @@
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+    /* Tùng zone */
+    .categories-item {
+        margin-top: 15px;
+        height: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .categories-menu-bar{
+        overflow-x: scroll;
+        height: 116px;
+    }
+
+    .categories-menu-bar .row{
+        flex-wrap: nowrap!important;
+    }
+
+    .accommodation-header{
+        padding-top: 47px;
+    }
+
+    .soutchai-item{
+        margin-top: 30px;
+    }
+
+    li.page-item {
+
+        display: none;
+    }
+
+    .page-item:first-child,
+    .page-item:last-child,
+    .page-item.active {
+
+        display: block;
+    }
+
+    .package-price-btn-box{
+        display: block !important;
+    }
+
+    .btn-buy{
+        margin-left: 0px !important;
+        margin-top: 10px !important;
+        width: 100%;
+    }
+
+    .btn-add-cart{
+        width: 100%;
+    }
+
+    .package-price-btn-box{
+        margin-top: 10px !important;
+        margin-left: 0px !important;
+    }
+
+    .sidebar-box{
+        top: 0px !important;
+    }
+
+    .options-area {
+        padding: 0px;
+    }
+
+    .date-picker-booking{
+        width: 100% !important;
+        margin-right: 0px;
+    }
+
+    .square-image {
+        position: relative;
+        padding-bottom: 30% !important;
+        height: 0 !important;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-media-icon{
+        text-align: center;
+    }
+
+    .square-image{
+        text-align: left;
+    }
+
+    .square-image img {
+        width: 20% !important;
+    }
+
+    .review-form-action button{
+        float: left !important;
+    }
+
+    .introduce-item img{
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 1.5rem;
+        object-fit: cover;
+    }
+
+    .introduce-item .bot-center{
+        height: 125px;
+    }
+
+    .item-fade {
+        background: black;
+        opacity: 0.9;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+    }
+
+    #sidebar_object_sticky{
+        margin-top: 0rem;
+    }
+
+    .payment-box{
+        margin-left: 20px;
+    }
+    /* end Tùng zone */
+    /* Nam zone */
+    .fs18-mb {
+        font-size: 1.125rem !important;
+    }
+
+    .fs16-mb {
+        font-size: 1rem !important;
+    }
+    .fs14-mb{
+        font-size: 0.875rem !important;
+    }
+    .sp {
+        display: block;
+    }
+    .pc {
+        display: none !important;
+    }
+    .dropzone {
+        min-height: 80px;
+        padding: 0;
+    }
+    .dropzone .dz-message {
+        margin: 1.5em 0;
+    }
+
+    .dropzone .dz-preview .dz-image {
+        width: 80px;
+        height: 80px;
+    }
+    .dropzone .dz-preview .dz-remove {
+        font-size: 12px;
+    }
+    .sidebar-detail {
+        z-index: 3;
+    }
+    .review-image-thumbs .swiper-slide {
+        height: 70px;
+    }
+    /* end Nam zone */
+    /* D4rk zone */
+    .navbar-home {
+		
+    }
+    .navbar-home .header-logo {
+        background: url("../img/logo.png");
+    }
+    .navbar-home .navbar-toggler {
+        /*background-color: #ccc;*/
+    }
+    .slider-search {
+        top: 80px;
+        width: 100%;
+        left: 0;
+        transform: none;
+        padding: 10px;
+    }
+    .slider-search h1 {
+        font-size: 2rem;
+        text-align: left !important;
+        line-height: 1.5;
+    }
+    .slider-search h2 {
+        text-align: left !important;
+        font-size: 1.2rem;
+    }
+    .index__search_box {
+        padding: 1rem;
+    }
+    .index__search_box input {
+        height: 30px;
+        padding-left: 0.5rem;
+        width: calc(100% - 40px);
+    }
+    .index__search_box button {
+        height: 30px;
+        width: 40px;
+    }
+    .header-content {
+        height: 200px;
+    }
+    .main-featured {
+        display: none;
+    }
+    .nav_search_menu .nav_search_menu__list {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: auto;
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+    #navbarSupportedContent {
+        color: #666;
+    }
+    .header-menu-left {
+        float: left;
+    }
+    .header-menu-right {
+        margin-left: 110px !important;
+    }
+    .header-menu-right .nav-link {
+        display: none;
+    }
+    .header-menu-right .nav-user {
+        display: block;
+        color: #212529 !important;
+        margin-left: 105px !important;
+    }
+    .header-menu-right .dropdown-menu {
+        display: block;
+        position: static;
+        margin-left: 150px;
+        border: none;
+    }
+    .header-menu-right .dropdown-menu .arrow-up:before {
+        content: none;
+    }
+    .main-content {
+        margin-top: 0;
+    }
+    .swiper-slider-view .swiper-slide {
+        height: 150px;
+    }
+
+    .swiper-slider-next {
+        right: 1rem;
+        padding: 3px 12px;
+        font-size: 1.5rem;
+    }
+
+    .swiper-slider-prev {
+        left: 1rem;
+        padding: 3px 12px;
+        font-size: 1.5rem;
+    }
+    .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+    }
+    /* end D4rk zone */
+	
+	.block-item{
+		height: 260px;
+	}
+	
+	.swiper-slide img{
+		height: 200px;
+	}
+}

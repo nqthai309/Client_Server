@@ -1,0 +1,206 @@
+﻿@using CNW_N8_MVC.Models;
+@{ string id = ViewData["id"] as String;}
+@model dynamic
+
+@{
+    ViewBag.Title = "Homestay Detail";
+    Layout = "~/Views/Shared/List.cshtml";
+}
+
+<link rel="stylesheet" href="/Content/datePicker/jquery-ui.css">
+
+<script src="/Content/datePicker/jquery-1.12.4.js"></script>
+<script src="/Content/datePicker/jquery-ui.js"></script>
+<script>
+    $(function () {
+
+
+        $("#MyDate1").datepicker({
+
+        });
+    });
+</script>
+
+<section class="main-content">
+    <div class="swiper-container swiper-slider-view">
+        <div class="swiper-slide">
+            <div class="view-swiper-bg">
+                <img src="@Model.homestay.detail_header_image_url" alt="Slider" width="1920" height="350">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+    </div>
+    <div class="container">
+        <div class="row" id="main-content">
+            <div class="col-sm-9" id="content">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Homestay</a></li>
+                    </ol>
+                </nav>
+                <div class="hotel-information">
+                    <div class="">
+                        <h3 class="color-main semi-bold">@Model.homestay.homestay_name</h3>
+
+                    </div>
+                    <div class="mt-2">
+                        <p class="fs14">@Model.homestay.description</p>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-5">
+                <div class="package-options">
+                    <div class="">
+                        <h3 class="text-main semi-bold">Lựa chọn ngày</h3>
+                    </div>
+                    <div class="options-area">
+                        <form method="get" action="/Homestay/AddItemHomestay/@id">
+                            <br />
+                            <hr />
+                            <p class="fs16 text-black"></p>
+                            <div class="p-3">
+                                <p class="text-light-grey mb-3">Lựa chọn ngày</p>
+                                <div class="form-inline">
+                                    <div class="date-picker-booking form-group mr-3">
+                                        <p class="fs14 text-left mr-3">Ngày đến</p>
+                                        <div class="input-with-message">
+                                            <input type="date" class="form-control sc-datepicker check-in" name="check_in" id="checkin">
+                                        </div>
+                                    </div>
+                                    <div class="date-picker-booking form-group">
+                                        <p class="fs14 text-left mr-3">Ngày Về</p>
+                                        <div class="input-with-message">
+                                            <input type="date" class="form-control sc-datepicker check-out" name="check_out" id="checkout">
+                                        </div>
+                                        <div style="color:red; font-size:20px; margin-left:10px" id="divThongBao"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                <hr />
+                                <p class="text-light-grey mb-3">Chọn các gói dịch vụ đính kèm Homestay</p>
+                                @foreach (var it in Model.dichVu)
+                                {
+                                    <div class="row ml-1">
+                                        <div class="col-sm-4">
+                                            <p class="fs16: text-left mr-3">@it.tenDichVu:</p>
+                                        </div>
+                                        <div class="col-sm-4 form-inline">
+                                            <label class="mr-5 fs14"><input name="@it.idDichVu" type="radio" value="1" /><span class="ml-1"> Có</span></label>
+                                            <label class=" fs14"><input name="@it.idDichVu" type="radio" value="0" checked="checked" /><span class="ml-1"> Không</span></label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p class="fs16 ml-3 text-red">@it.donGiaDichVu vnđ</p>
+                                        </div>
+                                    </div>
+                                }
+                                <br />
+                                <hr />
+                                <div class="package-payment-info">
+                                    <p class="text-light-grey mb-3">Đơn Giá Phòng: </p>
+                                    <div class="package-price-wrapper">
+                                        <div class="package-price-content-wrapper">
+                                            <div class="package-price-box col-sm-5">
+                                                <div class="package-price-detail">
+                                                    <p class="package-price-total"><span class="j-totalPrice">@Model.homestay.sell_price vnđ</span></p>
+                                                    <div class="act_result__cost_detail act_result__cost_detail--inline j-cost_detail">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="package-price-btn-box col-sm-6">
+                                                <button id="datphong" class="btn btn-buy" type="submit">
+                                                    ĐẶT PHÒNG
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-5">
+                <div class="expect-area">
+                    <div class="">
+                        <h3 class="text-red fs26">Có những gì tại HomeStay?</h3>
+                    </div>
+                    <div class="mt-2">
+                        <p class="fs14">@Model.homestay.more_imformation</p>
+                        <div class="mt-5 image-area">
+                            <img src="@Model.homestay.more_imformation_image_url" class="full-width" alt="">
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-5">
+            </div>
+            <div class="col-sm-3" id="sidebar">
+                <div class="sidebar-item accomodation-sidebar mt-5">
+                    <div class="sidebar-box sidebar__inner">
+                        <div class="p-4">
+                            <p class="fs22 text-main"> @Model.homestay.sell_price vnđ/đêm</p>
+                            <p class="fs14 text-black">
+                                <del> @Model.homestay.price vnđ/đêm </del>
+                            </p>
+                            <button class="btn btn-buy" data-role="bookNow">ĐẶT PHÒNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-5 mb-5">
+        <div class="more-items pb-5">
+            <div class="">
+                <h3 class="text-main semi-bold">Homestay tương tự</h3>
+            </div>
+            <div class="mt-2">
+                <div class="position-relative full-width pt-5">
+                    <div class="row">
+                        @{ int key = 0;}
+                        @foreach (homestay it in Model.homestays)
+                        {
+                            key += 1;
+                            if (key > 4)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                <div class="col-sm-3">
+                                    <div class="soutchai-item">
+                                        <div class="m_justify_list m_radius_box act_card act_card_sm a_sd_move j_activity_item js-item block-item">
+                                            <a href="/Homestay/Detail/@it.id">
+                                                <div class="soutchai-item-img">
+                                                    <img src="@it.image_url" />
+                                                    <div class="top-left">
+                                                        <i class="fas fa-map-marker-alt fs13"></i>
+                                                        <span class="t_white">@it.location.location_name</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="">
+                                                    <li class="position-relative">
+                                                        <p class="title">@it.homestay_name</p>
+                                                    </li>
+                                                    <li class="price pt-2">
+                                                        <p class="fs12 text-grey">
+                                                            <del>@it.price VNĐ</del>
+                                                        </p>
+                                                        <p>
+                                                            <span class="latest_price color-main"><b> @it.sell_price đ/Đêm</b></span>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/js/DetailHomestay.js"></script>

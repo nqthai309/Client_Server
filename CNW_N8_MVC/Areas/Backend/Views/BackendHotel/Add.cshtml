@@ -1,0 +1,69 @@
+﻿
+@model CNW_N8_MVC.Models.hotel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Backend/Views/Shared/Backend.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header"><strong>Basic Form</strong> Elements</div>
+    <div class="card-body">
+        <form class="form-horizontal" action="/BackendHotel/AddHotel" method="post" enctype="multipart/form-data">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Địa Điểm</label>
+                <div class="col-md-9">
+                    <select class="form-control" id="location_id" name="location_id">
+
+                        <option selected="selected" value="1">Hà Nội</option>
+                        <option value="2">Sài Gòn</option>
+                        <option value="3">Đà Nẵng</option>
+                        <option value="4">Đà Lạt</option>
+                        <option value="5">Sapa</option>
+                        <option value="6">Phú Quốc</option>
+                        <option value="7">Hội An</option>
+                        <option value="8">Nha Trang</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Tên Khách Sạn</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="hotel_name" type="text" name="hotel_name" placeholder="Hotel Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Mô Tả</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="description" type="text" name="description" placeholder="Mô Tả">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Thông Tin Chi Tiết</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="more_imformation" type="text" name="more_imformation" placeholder="Thông tin chi tiết">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Giá Khách Sạn</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="price" type="text" name="price" placeholder="Giá Phòng">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="text-input">Giá Khuyến Mại</label>
+                <div class="col-md-9">
+                    <input class="form-control" id="sell_price" type="text" name="sell_price" placeholder="Giá Phòng Sale">
+                </div>
+            </div>
+
+            <div style="color:red; font-size:20px; text-align:center" id="divThongBao"></div>
+            <div class="card-footer">
+                <button id="btnThem" class="btn btn-sm btn-primary" type="submit"> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/js/AddHotel.js"></script>

@@ -1,0 +1,2734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DangNhapAppWinForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangNhapAppWinFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DangNhapAppWinFormResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListUser_BE">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListUser_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListUser_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditUser_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_old" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditUser_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUser_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteUser_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListHotel_BE">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListHotel_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHotel_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHotel_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHotel_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditHotel_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_old" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditHotel_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteHotel_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHotel_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListHomestay_BE">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListHomestay_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHomestay_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHomestay_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHomestay_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditHomestay_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_old" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditHomestay_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteHomestay_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHomestay_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListBooking_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListBooking_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListBooking_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListBookingOptional_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status_check" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListBookingOptional_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListBookingOptional_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHomestay">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListHomestayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHomestayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHotel">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHomestayById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHomestayByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindHomestayByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHotelById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHotelByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindHotelByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListLocation">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListLocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHomestayByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHomestayByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHomestayByLocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHotelByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHotelByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHotelByLocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindUserByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindUserByUsernameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndRegisterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndUpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndUpdateUserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndChangePasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndAddHotelBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddHotelBookingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndAddHomestayBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddHomestayBookingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteHotelBooking_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHotelBooking_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteHomestayBooking_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHomestayBooking_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConfirmHotelBooking_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmHotelBooking_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConfirmHomestayBooking_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmHomestayBooking_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListHotels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHotelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHotelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDetialHotel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDetialHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetDetialHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDetialHotels">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetDetialHotelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetDetialHotelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDichVuHotel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDichVuHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetDichVuHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddItemHotel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddItemHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndAddItemHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelect" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndSearchEngine_Price1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelect" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndSearchEngine_Price2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelect" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndSearchEngine_Price3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndSearchEngine_Price3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndOpitionList">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndOpitionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndOpitionListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndMinPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndMinPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndMinPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndMaxPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndMaxPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndMaxPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceMedium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelected" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceMediumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEFindHomestayByPriceMediumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceHigh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelected" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceHighResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEFindHomestayByPriceHighResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceLow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationSelected" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEFindHomestayByPriceLowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEFindHomestayByPriceLowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEGetListHomestays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEGetListHomestaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEGetListHomestaysResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEGetDetailHomestay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEGetDetailHomestayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEGetDetailHomestayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDichVuHomestay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetDichVuHomestayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetDichVuHomestayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEGetDetailHomestay0">
+        <s:complexType />
+      </s:element>
+      <s:element name="FEGetDetailHomestay0Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEGetDetailHomestay0Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEAddItemHomestay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEAddItemHomestayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEAddItemHomestayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEAddItem1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEAddItem1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEAddItem1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEOpitionList">
+        <s:complexType />
+      </s:element>
+      <s:element name="FEOpitionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEOpitionListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEMinPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="FEMinPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEMinPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FEMaxPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="FEMaxPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FEMaxPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListDichVu_HTHS_BE">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListDichVu_HTHS_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListDichVu_HTHS_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListDV">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListDVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListDVResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListTenDV">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListTenDVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListTenDVResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetTheLoai">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetTheLoaiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetTheLoaiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDichVu_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDichVu_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewDV_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDV_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDichVu_HTHS_BE">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDichVu_HTHS_BEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDichVu_HTHS_BEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemMoiDichVu_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemMoiDichVu_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ThemMoiDichVu2_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemMoiDichVu2_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteDichVu_BE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="theLoai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idDichVu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDichVu_BEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDichVuByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDichVuByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDichVuByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DangNhapAppWinFormSoapIn">
+    <wsdl:part name="parameters" element="tns:DangNhapAppWinForm" />
+  </wsdl:message>
+  <wsdl:message name="DangNhapAppWinFormSoapOut">
+    <wsdl:part name="parameters" element="tns:DangNhapAppWinFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListUser_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListUser_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListUser_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListUser_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditUser_BESoapIn">
+    <wsdl:part name="parameters" element="tns:EditUser_BE" />
+  </wsdl:message>
+  <wsdl:message name="EditUser_BESoapOut">
+    <wsdl:part name="parameters" element="tns:EditUser_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUser_BESoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser_BE" />
+  </wsdl:message>
+  <wsdl:message name="AddUser_BESoapOut">
+    <wsdl:part name="parameters" element="tns:AddUser_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUser_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUser_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUser_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUser_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListHotel_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHotel_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListHotel_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHotel_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHotel_BESoapIn">
+    <wsdl:part name="parameters" element="tns:AddHotel_BE" />
+  </wsdl:message>
+  <wsdl:message name="AddHotel_BESoapOut">
+    <wsdl:part name="parameters" element="tns:AddHotel_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditHotel_BESoapIn">
+    <wsdl:part name="parameters" element="tns:EditHotel_BE" />
+  </wsdl:message>
+  <wsdl:message name="EditHotel_BESoapOut">
+    <wsdl:part name="parameters" element="tns:EditHotel_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHotel_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHotel_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHotel_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHotel_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListHomestay_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHomestay_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListHomestay_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHomestay_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHomestay_BESoapIn">
+    <wsdl:part name="parameters" element="tns:AddHomestay_BE" />
+  </wsdl:message>
+  <wsdl:message name="AddHomestay_BESoapOut">
+    <wsdl:part name="parameters" element="tns:AddHomestay_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditHomestay_BESoapIn">
+    <wsdl:part name="parameters" element="tns:EditHomestay_BE" />
+  </wsdl:message>
+  <wsdl:message name="EditHomestay_BESoapOut">
+    <wsdl:part name="parameters" element="tns:EditHomestay_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHomestay_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHomestay_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHomestay_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHomestay_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListBooking_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListBooking_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListBooking_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListBooking_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListBookingOptional_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListBookingOptional_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListBookingOptional_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListBookingOptional_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestaySoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestay" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestaySoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestayResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotel" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHomestayByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHomestayById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHomestayByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHomestayByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHotelByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHotelById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHotelByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHotelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListLocation" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestayByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestayByLocation" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestayByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestayByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotelByLocation" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotelByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndLogin" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByUsername" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndRegister" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndUpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndUpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndUpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndUpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHotelBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHotelBooking" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHotelBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHotelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHomestayBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHomestayBooking" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHomestayBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHomestayBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHotelBooking_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHotelBooking_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHotelBooking_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHotelBooking_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHomestayBooking_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHomestayBooking_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHomestayBooking_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHomestayBooking_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmHotelBooking_BESoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmHotelBooking_BE" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmHotelBooking_BESoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmHotelBooking_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmHomestayBooking_BESoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmHomestayBooking_BE" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmHomestayBooking_BESoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmHomestayBooking_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelsSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotels" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelsSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDetialHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDetialHotel" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDetialHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDetialHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDetialHotelsSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDetialHotels" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDetialHotelsSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDetialHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDichVuHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDichVuHotel" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDichVuHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDichVuHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddItemHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndAddItemHotel" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddItemHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndAddItemHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price1SoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price1" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price1SoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price1Response" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price2SoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price2" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price2SoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price2Response" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price3SoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price3" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndSearchEngine_Price3SoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndSearchEngine_Price3Response" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndOpitionListSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndOpitionList" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndOpitionListSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndOpitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndMinPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndMinPrice" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndMinPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndMinPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndMaxPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndMaxPrice" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndMaxPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndMaxPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceMediumSoapIn">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceMedium" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceMediumSoapOut">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceMediumResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceHighSoapIn">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceHigh" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceHighSoapOut">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceHighResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceLowSoapIn">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceLow" />
+  </wsdl:message>
+  <wsdl:message name="FEFindHomestayByPriceLowSoapOut">
+    <wsdl:part name="parameters" element="tns:FEFindHomestayByPriceLowResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEGetListHomestaysSoapIn">
+    <wsdl:part name="parameters" element="tns:FEGetListHomestays" />
+  </wsdl:message>
+  <wsdl:message name="FEGetListHomestaysSoapOut">
+    <wsdl:part name="parameters" element="tns:FEGetListHomestaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEGetDetailHomestaySoapIn">
+    <wsdl:part name="parameters" element="tns:FEGetDetailHomestay" />
+  </wsdl:message>
+  <wsdl:message name="FEGetDetailHomestaySoapOut">
+    <wsdl:part name="parameters" element="tns:FEGetDetailHomestayResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDichVuHomestaySoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDichVuHomestay" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetDichVuHomestaySoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetDichVuHomestayResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEGetDetailHomestay0SoapIn">
+    <wsdl:part name="parameters" element="tns:FEGetDetailHomestay0" />
+  </wsdl:message>
+  <wsdl:message name="FEGetDetailHomestay0SoapOut">
+    <wsdl:part name="parameters" element="tns:FEGetDetailHomestay0Response" />
+  </wsdl:message>
+  <wsdl:message name="FEAddItemHomestaySoapIn">
+    <wsdl:part name="parameters" element="tns:FEAddItemHomestay" />
+  </wsdl:message>
+  <wsdl:message name="FEAddItemHomestaySoapOut">
+    <wsdl:part name="parameters" element="tns:FEAddItemHomestayResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEAddItem1SoapIn">
+    <wsdl:part name="parameters" element="tns:FEAddItem1" />
+  </wsdl:message>
+  <wsdl:message name="FEAddItem1SoapOut">
+    <wsdl:part name="parameters" element="tns:FEAddItem1Response" />
+  </wsdl:message>
+  <wsdl:message name="FEOpitionListSoapIn">
+    <wsdl:part name="parameters" element="tns:FEOpitionList" />
+  </wsdl:message>
+  <wsdl:message name="FEOpitionListSoapOut">
+    <wsdl:part name="parameters" element="tns:FEOpitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEMinPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:FEMinPrice" />
+  </wsdl:message>
+  <wsdl:message name="FEMinPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:FEMinPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="FEMaxPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:FEMaxPrice" />
+  </wsdl:message>
+  <wsdl:message name="FEMaxPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:FEMaxPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListDichVu_HTHS_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetListDichVu_HTHS_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetListDichVu_HTHS_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetListDichVu_HTHS_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListDVSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListDV" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListDVSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListDVResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListTenDVSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListTenDV" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListTenDVSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListTenDVResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetTheLoaiSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetTheLoai" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetTheLoaiSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetTheLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDichVu_BESoapIn">
+    <wsdl:part name="parameters" element="tns:AddDichVu_BE" />
+  </wsdl:message>
+  <wsdl:message name="AddDichVu_BESoapOut">
+    <wsdl:part name="parameters" element="tns:AddDichVu_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewDV_BESoapIn">
+    <wsdl:part name="parameters" element="tns:NewDV_BE" />
+  </wsdl:message>
+  <wsdl:message name="NewDV_BESoapOut">
+    <wsdl:part name="parameters" element="tns:NewDV_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDichVu_HTHS_BESoapIn">
+    <wsdl:part name="parameters" element="tns:GetDichVu_HTHS_BE" />
+  </wsdl:message>
+  <wsdl:message name="GetDichVu_HTHS_BESoapOut">
+    <wsdl:part name="parameters" element="tns:GetDichVu_HTHS_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemMoiDichVu_BESoapIn">
+    <wsdl:part name="parameters" element="tns:ThemMoiDichVu_BE" />
+  </wsdl:message>
+  <wsdl:message name="ThemMoiDichVu_BESoapOut">
+    <wsdl:part name="parameters" element="tns:ThemMoiDichVu_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemMoiDichVu2_BESoapIn">
+    <wsdl:part name="parameters" element="tns:ThemMoiDichVu2_BE" />
+  </wsdl:message>
+  <wsdl:message name="ThemMoiDichVu2_BESoapOut">
+    <wsdl:part name="parameters" element="tns:ThemMoiDichVu2_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDichVu_BESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDichVu_BE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDichVu_BESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDichVu_BEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDichVuByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDichVuByID" />
+  </wsdl:message>
+  <wsdl:message name="GetDichVuByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDichVuByIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="DangNhapAppWinForm">
+      <wsdl:input message="tns:DangNhapAppWinFormSoapIn" />
+      <wsdl:output message="tns:DangNhapAppWinFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListUser_BE">
+      <wsdl:input message="tns:GetListUser_BESoapIn" />
+      <wsdl:output message="tns:GetListUser_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditUser_BE">
+      <wsdl:input message="tns:EditUser_BESoapIn" />
+      <wsdl:output message="tns:EditUser_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser_BE">
+      <wsdl:input message="tns:AddUser_BESoapIn" />
+      <wsdl:output message="tns:AddUser_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser_BE">
+      <wsdl:input message="tns:DeleteUser_BESoapIn" />
+      <wsdl:output message="tns:DeleteUser_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotel_BE">
+      <wsdl:input message="tns:GetListHotel_BESoapIn" />
+      <wsdl:output message="tns:GetListHotel_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHotel_BE">
+      <wsdl:input message="tns:AddHotel_BESoapIn" />
+      <wsdl:output message="tns:AddHotel_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditHotel_BE">
+      <wsdl:input message="tns:EditHotel_BESoapIn" />
+      <wsdl:output message="tns:EditHotel_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel_BE">
+      <wsdl:input message="tns:DeleteHotel_BESoapIn" />
+      <wsdl:output message="tns:DeleteHotel_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHomestay_BE">
+      <wsdl:input message="tns:GetListHomestay_BESoapIn" />
+      <wsdl:output message="tns:GetListHomestay_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHomestay_BE">
+      <wsdl:input message="tns:AddHomestay_BESoapIn" />
+      <wsdl:output message="tns:AddHomestay_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditHomestay_BE">
+      <wsdl:input message="tns:EditHomestay_BESoapIn" />
+      <wsdl:output message="tns:EditHomestay_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestay_BE">
+      <wsdl:input message="tns:DeleteHomestay_BESoapIn" />
+      <wsdl:output message="tns:DeleteHomestay_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListBooking_BE">
+      <wsdl:input message="tns:GetListBooking_BESoapIn" />
+      <wsdl:output message="tns:GetListBooking_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListBookingOptional_BE">
+      <wsdl:input message="tns:GetListBookingOptional_BESoapIn" />
+      <wsdl:output message="tns:GetListBookingOptional_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <wsdl:input message="tns:FrontEndGetListHomestaySoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHomestaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <wsdl:input message="tns:FrontEndGetListHotelSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <wsdl:input message="tns:FrontEndFindHomestayByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindHomestayByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <wsdl:input message="tns:FrontEndFindHotelByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindHotelByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <wsdl:input message="tns:FrontEndGetListLocationSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestayByLocation">
+      <wsdl:input message="tns:FrontEndGetListHomestayByLocationSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHomestayByLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotelByLocation">
+      <wsdl:input message="tns:FrontEndGetListHotelByLocationSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHotelByLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <wsdl:input message="tns:FrontEndLoginSoapIn" />
+      <wsdl:output message="tns:FrontEndLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <wsdl:input message="tns:FrontEndFindUserByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindUserByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <wsdl:input message="tns:FrontEndFindUserByUsernameSoapIn" />
+      <wsdl:output message="tns:FrontEndFindUserByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <wsdl:input message="tns:FrontEndRegisterSoapIn" />
+      <wsdl:output message="tns:FrontEndRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <wsdl:input message="tns:FrontEndUpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:FrontEndUpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <wsdl:input message="tns:FrontEndChangePasswordSoapIn" />
+      <wsdl:output message="tns:FrontEndChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <wsdl:input message="tns:FrontEndAddHotelBookingSoapIn" />
+      <wsdl:output message="tns:FrontEndAddHotelBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <wsdl:input message="tns:FrontEndAddHomestayBookingSoapIn" />
+      <wsdl:output message="tns:FrontEndAddHomestayBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotelBooking_BE">
+      <wsdl:input message="tns:DeleteHotelBooking_BESoapIn" />
+      <wsdl:output message="tns:DeleteHotelBooking_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestayBooking_BE">
+      <wsdl:input message="tns:DeleteHomestayBooking_BESoapIn" />
+      <wsdl:output message="tns:DeleteHomestayBooking_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHotelBooking_BE">
+      <wsdl:input message="tns:ConfirmHotelBooking_BESoapIn" />
+      <wsdl:output message="tns:ConfirmHotelBooking_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHomestayBooking_BE">
+      <wsdl:input message="tns:ConfirmHomestayBooking_BESoapIn" />
+      <wsdl:output message="tns:ConfirmHomestayBooking_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotels">
+      <wsdl:input message="tns:FrontEndGetListHotelsSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHotelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotel">
+      <wsdl:input message="tns:FrontEndGetDetialHotelSoapIn" />
+      <wsdl:output message="tns:FrontEndGetDetialHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotels">
+      <wsdl:input message="tns:FrontEndGetDetialHotelsSoapIn" />
+      <wsdl:output message="tns:FrontEndGetDetialHotelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHotel">
+      <wsdl:input message="tns:FrontEndGetDichVuHotelSoapIn" />
+      <wsdl:output message="tns:FrontEndGetDichVuHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddItemHotel">
+      <wsdl:input message="tns:FrontEndAddItemHotelSoapIn" />
+      <wsdl:output message="tns:FrontEndAddItemHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price1">
+      <wsdl:input message="tns:FrontEndSearchEngine_Price1SoapIn" />
+      <wsdl:output message="tns:FrontEndSearchEngine_Price1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price2">
+      <wsdl:input message="tns:FrontEndSearchEngine_Price2SoapIn" />
+      <wsdl:output message="tns:FrontEndSearchEngine_Price2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price3">
+      <wsdl:input message="tns:FrontEndSearchEngine_Price3SoapIn" />
+      <wsdl:output message="tns:FrontEndSearchEngine_Price3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndOpitionList">
+      <wsdl:input message="tns:FrontEndOpitionListSoapIn" />
+      <wsdl:output message="tns:FrontEndOpitionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMinPrice">
+      <wsdl:input message="tns:FrontEndMinPriceSoapIn" />
+      <wsdl:output message="tns:FrontEndMinPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMaxPrice">
+      <wsdl:input message="tns:FrontEndMaxPriceSoapIn" />
+      <wsdl:output message="tns:FrontEndMaxPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceMedium">
+      <wsdl:input message="tns:FEFindHomestayByPriceMediumSoapIn" />
+      <wsdl:output message="tns:FEFindHomestayByPriceMediumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceHigh">
+      <wsdl:input message="tns:FEFindHomestayByPriceHighSoapIn" />
+      <wsdl:output message="tns:FEFindHomestayByPriceHighSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceLow">
+      <wsdl:input message="tns:FEFindHomestayByPriceLowSoapIn" />
+      <wsdl:output message="tns:FEFindHomestayByPriceLowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEGetListHomestays">
+      <wsdl:input message="tns:FEGetListHomestaysSoapIn" />
+      <wsdl:output message="tns:FEGetListHomestaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay">
+      <wsdl:input message="tns:FEGetDetailHomestaySoapIn" />
+      <wsdl:output message="tns:FEGetDetailHomestaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHomestay">
+      <wsdl:input message="tns:FrontEndGetDichVuHomestaySoapIn" />
+      <wsdl:output message="tns:FrontEndGetDichVuHomestaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay0">
+      <wsdl:input message="tns:FEGetDetailHomestay0SoapIn" />
+      <wsdl:output message="tns:FEGetDetailHomestay0SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItemHomestay">
+      <wsdl:input message="tns:FEAddItemHomestaySoapIn" />
+      <wsdl:output message="tns:FEAddItemHomestaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItem1">
+      <wsdl:input message="tns:FEAddItem1SoapIn" />
+      <wsdl:output message="tns:FEAddItem1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEOpitionList">
+      <wsdl:input message="tns:FEOpitionListSoapIn" />
+      <wsdl:output message="tns:FEOpitionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEMinPrice">
+      <wsdl:input message="tns:FEMinPriceSoapIn" />
+      <wsdl:output message="tns:FEMinPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FEMaxPrice">
+      <wsdl:input message="tns:FEMaxPriceSoapIn" />
+      <wsdl:output message="tns:FEMaxPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListDichVu_HTHS_BE">
+      <wsdl:input message="tns:GetListDichVu_HTHS_BESoapIn" />
+      <wsdl:output message="tns:GetListDichVu_HTHS_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListDV">
+      <wsdl:input message="tns:FrontEndGetListDVSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListDVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListTenDV">
+      <wsdl:input message="tns:FrontEndGetListTenDVSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListTenDVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetTheLoai">
+      <wsdl:input message="tns:FrontEndGetTheLoaiSoapIn" />
+      <wsdl:output message="tns:FrontEndGetTheLoaiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDichVu_BE">
+      <wsdl:input message="tns:AddDichVu_BESoapIn" />
+      <wsdl:output message="tns:AddDichVu_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDV_BE">
+      <wsdl:input message="tns:NewDV_BESoapIn" />
+      <wsdl:output message="tns:NewDV_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVu_HTHS_BE">
+      <wsdl:input message="tns:GetDichVu_HTHS_BESoapIn" />
+      <wsdl:output message="tns:GetDichVu_HTHS_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu_BE">
+      <wsdl:input message="tns:ThemMoiDichVu_BESoapIn" />
+      <wsdl:output message="tns:ThemMoiDichVu_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu2_BE">
+      <wsdl:input message="tns:ThemMoiDichVu2_BESoapIn" />
+      <wsdl:output message="tns:ThemMoiDichVu2_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDichVu_BE">
+      <wsdl:input message="tns:DeleteDichVu_BESoapIn" />
+      <wsdl:output message="tns:DeleteDichVu_BESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVuByID">
+      <wsdl:input message="tns:GetDichVuByIDSoapIn" />
+      <wsdl:output message="tns:GetDichVuByIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DangNhapAppWinForm">
+      <soap:operation soapAction="http://tempuri.org/DangNhapAppWinForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListUser_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListUser_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditUser_BE">
+      <soap:operation soapAction="http://tempuri.org/EditUser_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser_BE">
+      <soap:operation soapAction="http://tempuri.org/AddUser_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteUser_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotel_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListHotel_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHotel_BE">
+      <soap:operation soapAction="http://tempuri.org/AddHotel_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditHotel_BE">
+      <soap:operation soapAction="http://tempuri.org/EditHotel_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteHotel_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHomestay_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHomestay_BE">
+      <soap:operation soapAction="http://tempuri.org/AddHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditHomestay_BE">
+      <soap:operation soapAction="http://tempuri.org/EditHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestay_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListBooking_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListBooking_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListBookingOptional_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListBookingOptional_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHomestay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindHomestayById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindHotelById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestayByLocation">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHomestayByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotelByLocation">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHotelByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <soap:operation soapAction="http://tempuri.org/FrontEndLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindUserByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <soap:operation soapAction="http://tempuri.org/FrontEndRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/FrontEndUpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <soap:operation soapAction="http://tempuri.org/FrontEndChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <soap:operation soapAction="http://tempuri.org/FrontEndAddHotelBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <soap:operation soapAction="http://tempuri.org/FrontEndAddHomestayBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotelBooking_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteHotelBooking_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestayBooking_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteHomestayBooking_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHotelBooking_BE">
+      <soap:operation soapAction="http://tempuri.org/ConfirmHotelBooking_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHomestayBooking_BE">
+      <soap:operation soapAction="http://tempuri.org/ConfirmHomestayBooking_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotels">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHotels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotel">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetDetialHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotels">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetDetialHotels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHotel">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetDichVuHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddItemHotel">
+      <soap:operation soapAction="http://tempuri.org/FrontEndAddItemHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price1">
+      <soap:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price2">
+      <soap:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price3">
+      <soap:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndOpitionList">
+      <soap:operation soapAction="http://tempuri.org/FrontEndOpitionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMinPrice">
+      <soap:operation soapAction="http://tempuri.org/FrontEndMinPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMaxPrice">
+      <soap:operation soapAction="http://tempuri.org/FrontEndMaxPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceMedium">
+      <soap:operation soapAction="http://tempuri.org/FEFindHomestayByPriceMedium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceHigh">
+      <soap:operation soapAction="http://tempuri.org/FEFindHomestayByPriceHigh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceLow">
+      <soap:operation soapAction="http://tempuri.org/FEFindHomestayByPriceLow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetListHomestays">
+      <soap:operation soapAction="http://tempuri.org/FEGetListHomestays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay">
+      <soap:operation soapAction="http://tempuri.org/FEGetDetailHomestay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHomestay">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetDichVuHomestay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay0">
+      <soap:operation soapAction="http://tempuri.org/FEGetDetailHomestay0" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItemHomestay">
+      <soap:operation soapAction="http://tempuri.org/FEAddItemHomestay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItem1">
+      <soap:operation soapAction="http://tempuri.org/FEAddItem1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEOpitionList">
+      <soap:operation soapAction="http://tempuri.org/FEOpitionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEMinPrice">
+      <soap:operation soapAction="http://tempuri.org/FEMinPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEMaxPrice">
+      <soap:operation soapAction="http://tempuri.org/FEMaxPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDichVu_HTHS_BE">
+      <soap:operation soapAction="http://tempuri.org/GetListDichVu_HTHS_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListDV">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListDV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListTenDV">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListTenDV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetTheLoai">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetTheLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDichVu_BE">
+      <soap:operation soapAction="http://tempuri.org/AddDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDV_BE">
+      <soap:operation soapAction="http://tempuri.org/NewDV_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVu_HTHS_BE">
+      <soap:operation soapAction="http://tempuri.org/GetDichVu_HTHS_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu_BE">
+      <soap:operation soapAction="http://tempuri.org/ThemMoiDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu2_BE">
+      <soap:operation soapAction="http://tempuri.org/ThemMoiDichVu2_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDichVu_BE">
+      <soap:operation soapAction="http://tempuri.org/DeleteDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVuByID">
+      <soap:operation soapAction="http://tempuri.org/GetDichVuByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DangNhapAppWinForm">
+      <soap12:operation soapAction="http://tempuri.org/DangNhapAppWinForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListUser_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListUser_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditUser_BE">
+      <soap12:operation soapAction="http://tempuri.org/EditUser_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser_BE">
+      <soap12:operation soapAction="http://tempuri.org/AddUser_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteUser_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotel_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListHotel_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHotel_BE">
+      <soap12:operation soapAction="http://tempuri.org/AddHotel_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditHotel_BE">
+      <soap12:operation soapAction="http://tempuri.org/EditHotel_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHotel_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHomestay_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHomestay_BE">
+      <soap12:operation soapAction="http://tempuri.org/AddHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditHomestay_BE">
+      <soap12:operation soapAction="http://tempuri.org/EditHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestay_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHomestay_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListBooking_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListBookingOptional_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListBookingOptional_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHomestay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindHomestayById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindHotelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestayByLocation">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHomestayByLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotelByLocation">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHotelByLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindUserById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindUserByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndUpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndAddHotelBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndAddHomestayBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotelBooking_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHotelBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHomestayBooking_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHomestayBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHotelBooking_BE">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmHotelBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmHomestayBooking_BE">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmHomestayBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotels">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHotels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotel">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetDetialHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDetialHotels">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetDetialHotels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHotel">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetDichVuHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddItemHotel">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndAddItemHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price1">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price2">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndSearchEngine_Price3">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndSearchEngine_Price3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndOpitionList">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndOpitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMinPrice">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndMinPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndMaxPrice">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndMaxPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceMedium">
+      <soap12:operation soapAction="http://tempuri.org/FEFindHomestayByPriceMedium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceHigh">
+      <soap12:operation soapAction="http://tempuri.org/FEFindHomestayByPriceHigh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEFindHomestayByPriceLow">
+      <soap12:operation soapAction="http://tempuri.org/FEFindHomestayByPriceLow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetListHomestays">
+      <soap12:operation soapAction="http://tempuri.org/FEGetListHomestays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay">
+      <soap12:operation soapAction="http://tempuri.org/FEGetDetailHomestay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetDichVuHomestay">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetDichVuHomestay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEGetDetailHomestay0">
+      <soap12:operation soapAction="http://tempuri.org/FEGetDetailHomestay0" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItemHomestay">
+      <soap12:operation soapAction="http://tempuri.org/FEAddItemHomestay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEAddItem1">
+      <soap12:operation soapAction="http://tempuri.org/FEAddItem1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEOpitionList">
+      <soap12:operation soapAction="http://tempuri.org/FEOpitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEMinPrice">
+      <soap12:operation soapAction="http://tempuri.org/FEMinPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FEMaxPrice">
+      <soap12:operation soapAction="http://tempuri.org/FEMaxPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDichVu_HTHS_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetListDichVu_HTHS_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListDV">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListDV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListTenDV">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListTenDV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetTheLoai">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetTheLoai" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDichVu_BE">
+      <soap12:operation soapAction="http://tempuri.org/AddDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDV_BE">
+      <soap12:operation soapAction="http://tempuri.org/NewDV_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVu_HTHS_BE">
+      <soap12:operation soapAction="http://tempuri.org/GetDichVu_HTHS_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu_BE">
+      <soap12:operation soapAction="http://tempuri.org/ThemMoiDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMoiDichVu2_BE">
+      <soap12:operation soapAction="http://tempuri.org/ThemMoiDichVu2_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDichVu_BE">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDichVu_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDichVuByID">
+      <soap12:operation soapAction="http://tempuri.org/GetDichVuByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44363/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44363/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

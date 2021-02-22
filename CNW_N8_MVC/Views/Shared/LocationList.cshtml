@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "LocationList";
+}
+@{ string username = ViewData["username"] as String;}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/Content/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/Content/vendor/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="/Content/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/Content/css/poppins.css">
+    <link rel="stylesheet" href="/Content/css/common.css">
+    <link rel="stylesheet" href="/Content/css/style.css">
+    <link rel="stylesheet" href="/Content/css/responsive.css">
+
+    <title>TTHT Hà Nội Hotel</title>
+</head>
+<body>
+    <!--Header Zone -->
+    <header class="header">
+        <nav class="navbar navbar-expand-md navbar-home navbar-home-fixed">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="/Content/img/logo-black.png" class="logo-header">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <div class="nav_search_menu">
+                            <i class="fas fa-bars"></i>
+                            <span class="nav_search_menu__txt">
+                                Categories
+                            </span>
+                            <ul class="nav_search_menu__list">
+                                <div class="nav_search_menu__item_wrapper">
+                                    <a href="@Url.Action("HotelList", "Location")" class="nav_search_menu__item j-nav_search_menu_thing">
+                                        <p class="nav_search_menu__item_txt">Khách Sạn </p>
+                                    </a>
+                                </div>
+                                <div class="nav_search_menu__item_wrapper">
+                                    <a href="@Url.Action("HomestayList", "Location")" class="nav_search_menu__item j-nav_search_menu_thing">
+                                        <p class="nav_search_menu__item_txt">Home Stay</p>
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons header-menu-right">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="@Url.Action("Booking", "User")">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <!--
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle align-items-center text-white" href="@Url.Action("Booking", "User")" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            User <i class="fas fa-user-circle"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <div class="arrow-up"></div>
+            <a class="dropdown-item" href="@Url.Action("Booking", "User")">
+                Đơn hàng
+            </a>
+            <a class="dropdown-item" href="@Url.Action("Config", "User")">
+                Cài đặt
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                Logout
+            </a>
+        </div>
+    </li>
+    -->
+                    @if (username == null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="@Url.Action("Login", "User")">Đăng Nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="@Url.Action("Register", "User")">Đăng Ký</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="@Url.Action("Config", "User")">@username</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Zone -->
+    <!-- Main Content -->
+    @RenderBody()
+
+    <!-- End Main Content -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="box-submit">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 mt-5 mb-5">
+                        <ul class="">
+                            <li class="d-inline"><i class="fab fa-facebook-square fs30 mr-5 text-light-grey"></i></li>
+                            <li class="d-inline"><i class="fab fa-twitter fs30 mr-5 text-light-grey"></i></li>
+                            <li class="d-inline"><i class="fab fa-instagram fs30 mr-5 text-light-grey"></i></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mt-5 mb-5">
+                        <div class="subscribe-box">
+                            <form>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text text-light-grey">Subcribe for news</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Enter your email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text email-submit bg-main text-white" id="basic-addon2">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-36 mt-5 mb-5">
+                        <p class="text-white fs16"><i class="far fa-copyright"></i> 2014-2019 SOUTCHAI Travel</p>
+                        <a class="fs13 text-white" href="#">Limited. All Right Reserved</a>
+                    </div>
+                    <div class="col-sm-2 col-xs-36 mt-5 mb-5">
+                        <p class="fs16 text-white semi-bold">ABOUT SOUTCHAI</p>
+                        <ul class="mt40 footer-menu">
+                        </ul>
+                    </div>
+                    <div class="col-sm-2  col-xs-36 mt-5 mb-5">
+                        <p class="fs16 text-white semi-bold">PARTNERSHIPS</p>
+                        <ul class="mt40 footer-menu">
+                        </ul>
+                    </div>
+                    <div class="col-sm-2  col-xs-36 mt-5 mb-5">
+                        <p class="fs16 text-white semi-bold">TERMS OF USE</p>
+                        <ul class="mt40 footer-menu">
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-xs-36 mt-5 mb-5">
+                        <div class="home-faq">
+
+                        </div>
+                        <div class="payment-channel mt-3">
+                            <p class="text-white">PAYMENT CHANNEL</p>
+                            <img src="/Content/img/visa-stock-cover.png" alt="Soutchai logo">
+                            <img src="/Content/img/download (1).png" alt="Soutchai logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="Content/vendor/jquery/jquery-3.4.1.min.js"></script>
+    <script src="Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Content/vendor/fontawesome/js/all.min.js"></script>
+    <script src="Content/vendor/swiper/dist/js/swiper.min.js"></script>
+    <script src="Content/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="Content/js/common.js"></script>
+</body>
+</html>

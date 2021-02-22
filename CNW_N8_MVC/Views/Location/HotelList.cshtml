@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "HotelList";
+    Layout = "~/Views/Shared/LocationList.cshtml";
+}
+
+
+@using PagedList;
+@using PagedList.Mvc;
+@{ string count = ViewData["count"] as String;}
+@{ string location_Name = ViewData["locationName"] as String;}
+@{ string txtSearch = ViewData["txtSearch"] as String;}
+@{ IEnumerable<CNW_N8_MVC.Models.location> optionList = ViewData["optionList"] as IEnumerable<CNW_N8_MVC.Models.location>;}
+@{ string minPrice = ViewData["minPrice"] as String;}
+@{ string maxPrice = ViewData["maxPrice"] as String;} 
+@model IEnumerable<CNW_N8_MVC.Models.hotel>
+
+
+
+<section class="main-content bg-white">
+    <div class="reason-top">
+        <div class="reason-top-opacity">
+            <div class="container">
+                <div class="reason-top-text text-center dropdown text-white">
+                    <a style="color:white"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Thay đổi địa điểm
+                    </a>
+                    
+                    <div class="dropdown-menu dropdown-menu-center">
+
+                    </div>
+                    <p class="fs32 text-white text-capitalize">@location_Name</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="categories-menu-bar">
+                <div class="row">
+                    <div class="col">
+                        <div class="categories-item selected-categories">
+                            <a href="@Url.Action("HotelList", "Location", new { @locationName = location_Name}))">
+                                <div class="categories-item-img">
+                                    <img src="/Content/img/hotel-1.png" />
+                                </div>
+                                <p class="fs12 pt-1">Hotel</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="categories-item">
+                            <a href="@Url.Action("HomestayList", "Location", new { @locationName = location_Name})">
+                                <div class="categories-item-img">
+                                    <img src="/Content/img/chalet.png" />
+                                </div>
+                                <p class="fs12 pt-1">Homestay</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="accommodation-header pt-lg-5">
+            <div class="accommodation-filter mt-4 position-relative">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <form method="get" action="/Location/SearchEngineHotel/@location_Name">
+                            <div  class="form-row">
+                                <div style="display:flex" class="form-group col-sm-12">
+                                    
+                                </div>
+                               
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="col-sm-5">
+                        <p class="fs20 mt-2">@count Hotel được tìm thấy</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group ml-5">
+                            <select name="" id="" class="selectpicker sc-input" data-live-search="true" title="Sort by:" data-width="100%" data-style="bg-white">
+                                <option value="">Most popular</option>
+                                <option value="">Price</option>
+                                <option value="">Rate</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="sidebar">
+                            <form>
+                                <div class="form-row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="filter-price mt-3">
+                                                <p class="text-red fs14">Price range</p>
+                                                <p class="fs12 ml-2">@minPrice đ - @maxPrice đ</p>
+                                                <div class="slidecontainer">
+                                                    <input class="slider" id="slider" width="10%" />
+                                                    <p class="fs13">Giá tiền:  <span id="value"></span>đ</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row pt-3 pb-3">
+                            @foreach (var it in Model)
+                            {
+                                <div class="col-sm-4">
+                                    <div class="soutchai-item block-item">
+                                        <a href="@Url.Action("Detail", "Hotel", new { @id = it.id})">
+                                            <div class="soutchai-item-img">
+                                                <img src="@it.image_url" />
+                                                <div class="top-left">
+                                                    <i class="fas fa-map-marker-alt fs13"></i>
+                                                    <span class="t_white">@it.location.location_name</span>
+                                                </div>
+                                            </div>
+                                            <ul class="">
+                                                <li class="position-relative">
+                                                    <p class="title">@it.hotel_name</p>
+                                                </li>
+                                                <li class="price pt-2">
+                                                    <p class="fs12 text-grey">
+                                                        <del>@it.price đ/đêm</del>
+                                                    </p>
+                                                    <p>
+                                                        <span class="latest_price color-main"><b>@it.sell_price đ/đêm</b></span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+
+                        <div class="sc-pagination pb-5">
+                            <nav aria-label="Page navigation example">
+                                <ul  class="pagination justify-content-center">
+                                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                                   @* @Html.PagedListPager(Model, pageNumber => Url.Action("HotelList", new { page = pageNumber })) *@
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

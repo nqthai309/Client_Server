@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "User Booking";
+    Layout = "~/Views/Shared/List.cshtml";
+}
+@{ string username = ViewData["username"] as String;}
+@using CNW_N8_MVC.Models;
+
+@model Cart
+<form method="post" action="/User/ThanhToan/">
+    <section class="main-content" style="background-color : #e9ecef">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-3">
+                    <div class="user-info-box bg-white">
+                        <div class="user-profile-img">
+                            <img src="/Content/img/profile-user.png" alt="">
+                        </div>
+                        <h5 class="user-name">@username</h5>
+                        <table class="table table-bordered user-promote-table">
+                        </table>
+                        <div class="user-menu-box">
+                            <ul class="text-left">
+                                <li class="align-items-center d-flex selected">
+                                    <img src="/Content/font/notepad.svg" alt="">
+                                    <a href="@Url.Action("Booking", "User")" class="ml-2">Đơn Hàng</a>
+                                </li>
+                                <li class="align-items-center d-flex">
+                                    <img src="/Content/font/cogwheel.svg" alt="">
+                                    <a href="@Url.Action("Config", "User")" class="ml-2">Cài Đặt</a>
+                                </li>
+                                <li class="align-items-center d-flex">
+                                    <img src="/Content/font/dashbroad.svg" alt="">
+                                    <a href="@Url.Action("Logout","User")" class="ml-2">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="user-main-box bg-white">
+                        <p>Danh sách Giỏ Hàng</p>
+                        <div class="p-3">
+                            <div class="box-white mb30 p15">
+                                <div class="filter-header mb15">
+                                    <div class="row vertical-center pt-3 pb-3 panel-border-grey panel-bg-red">
+                                        <div class="col">
+                                            <p class=" semi-bold">Tên</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p class=" semi-bold">Số Đêm</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p class=" semi-bold">D.Vụ</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p class=" semi-bold">TT D.Vụ</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p style="margin-right:55px" class=" semi-bold">Thành Tiền</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p style="margin-right:55px" class=" semi-bold"> </p>
+                                        </div>
+                                        <div class="clear-fix"></div>
+                                    </div>
+                                    <div id="list_bookings" class="accordion filter-accordion">
+                                        <div class="panel" data-room-id="booking1">
+                                            @foreach (var it in Model.lines)
+                                            {
+                                                if (it.Product.Status_checking == "hotel")
+                                                {
+                                                    <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
+                                                        <div class="col">@it.Product.Name</div>
+                                                        <div class="col text-center">@it.Quantity</div>
+                                                        <div class="col text-center">@it.SelectDichVu</div>
+                                                        <div class="col text-center">@it.ThanhTienDichVu</div>
+                                                        <div class="col text-center">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString())+it.ThanhTienDichVu).ToString()) VNĐ</div>
+                                                        <div class="col text-center">
+                                                            <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User",new { @id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "hotel"})">Xoá</a>
+                                                        </div>
+                                                        <div class="clear-fix"></div>
+                                                    </div>
+                                                }
+                                                if (it.Product.Status_checking == "homestay")
+                                                {
+                                                    <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
+                                                        <div class="col">@it.Product.Name</div>
+                                                        <div class="col text-center">@it.Quantity</div>
+                                                        <div class="col text-center">@it.SelectDichVu</div>
+                                                        <div class="col text-center">@it.ThanhTienDichVu</div>
+                                                        <div class="col text-center">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString())+it.ThanhTienDichVu).ToString()) VNĐ</div>
+                                                        <div class="col text-center">
+                                                            <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User",new { @id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "hotel"})">Xoá</a>
+                                                        </div>
+                                                        <div class="clear-fix"></div>
+                                                    </div>
+                                                }
+                                                @*@Ajax.ActionLink("Xoa AJ", "DeleteItem", new { @id = it.Product.Id, @status_check =it.Product.Status_checking}, new AjaxOptions
+                                           {
+                                               Confirm = "are you sure ?",
+                                               OnComplete = "$('#row_"+it.Product.Id+it.Product.Name+"').remove()",
+                                               HttpMethod = "Delete"
+                                           })*@
+                                                
+
+                                            }
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divThongBao"></div>
+                        @if (Model.lines.Count() == 0)
+                        {
+
+                        }
+                        else
+                        {
+                            <button style="border:2px; background-color:royalblue; color:white; font-size:20px; border-radius:8px" id="btnThanhToan">Thanh Toán</button>
+                        }
+
+                    </div>
+                    <div class="mt-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<script src="~/Scripts/js/ThanhToan.js"></script>
